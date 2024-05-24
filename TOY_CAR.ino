@@ -153,7 +153,7 @@ void loop()
     if (blinkActive_st && millis() - lastBlinkTime_st >= blinkInterval) {
         toggleBlinker(led_stanga, status_st);
         lastBlinkTime_st = millis();
-        if (++blinkCount_st >= 6) { // 3 full blinks, on and off counted separately
+        if (++blinkCount_st >= 6) {
             blinkActive_st = false;
             blinkCount_st = 0;
         }
@@ -163,7 +163,7 @@ void loop()
     if (blinkActive_dr && millis() - lastBlinkTime_dr >= blinkInterval) {
         toggleBlinker(led_dreapta, status_dr);
         lastBlinkTime_dr = millis();
-        if (++blinkCount_dr >= 6) { // 3 full blinks, on and off counted separately
+        if (++blinkCount_dr >= 6) {
             blinkActive_dr = false;
             blinkCount_dr = 0;
         }
@@ -184,12 +184,12 @@ void toggleBlinker(int pin, int &status) {
             
 void semnalizare_stanga() {
     blinkActive_st = true;
-    lastBlinkTime_st = millis() - blinkInterval; // Start immediately
+    lastBlinkTime_st = millis() - blinkInterval;
 }
 
 void semnalizare_dreapta() {
     blinkActive_dr = true;
-    lastBlinkTime_dr = millis() - blinkInterval; // Start immediately
+    lastBlinkTime_dr = millis() - blinkInterval;
 }
 
 void claxon() {
@@ -199,56 +199,56 @@ void claxon() {
   
 void forward()
 {
-  motor1.setSpeed(Speeed); //Define maximum velocity
-  motor1.run(FORWARD); //rotate the motor clockwise
-  motor2.setSpeed(Speeed); //Define maximum velocity
-  motor2.run(FORWARD); //rotate the motor clockwise
-  motor3.setSpeed(Speeed);//Define maximum velocity
-  motor3.run(FORWARD); //rotate the motor clockwise
-  motor4.setSpeed(Speeed);//Define maximum velocity
-  motor4.run(FORWARD); //rotate the motor clockwise
+  motor1.setSpeed(Speeed);
+  motor1.run(FORWARD);
+  motor2.setSpeed(Speeed); 
+  motor2.run(FORWARD);
+  motor3.setSpeed(Speeed);
+  motor3.run(FORWARD);
+  motor4.setSpeed(Speeed);
+  motor4.run(FORWARD);
 }
   
 void back()
 {
-  motor1.setSpeed(Speeed); //Define maximum velocity
-  motor1.run(BACKWARD); //rotate the motor anti-clockwise
-  motor2.setSpeed(Speeed); //Define maximum velocity
-  motor2.run(BACKWARD); //rotate the motor anti-clockwise
-  motor3.setSpeed(Speeed); //Define maximum velocity
-  motor3.run(BACKWARD); //rotate the motor anti-clockwise
-  motor4.setSpeed(Speeed); //Define maximum velocity
-  motor4.run(BACKWARD); //rotate the motor anti-clockwise
+  motor1.setSpeed(Speeed);
+  motor1.run(BACKWARD);
+  motor2.setSpeed(Speeed);
+  motor2.run(BACKWARD);
+  motor3.setSpeed(Speeed);
+  motor3.run(BACKWARD);
+  motor4.setSpeed(Speeed);
+  motor4.run(BACKWARD);
 }
   
 void left()
 {
-  motor1.setSpeed(Speeed); //Define maximum velocity
-  motor1.run(BACKWARD); //rotate the motor anti-clockwise
-  motor2.setSpeed(Speeed); //Define maximum velocity
-  motor2.run(BACKWARD); //rotate the motor anti-clockwise
-  motor3.setSpeed(Speeed); //Define maximum velocity
-  motor3.run(FORWARD);  //rotate the motor clockwise
-  motor4.setSpeed(Speeed); //Define maximum velocity
-  motor4.run(FORWARD);  //rotate the motor clockwise
+  motor1.setSpeed(Speeed);
+  motor1.run(BACKWARD);
+  motor2.setSpeed(Speeed);
+  motor2.run(BACKWARD);
+  motor3.setSpeed(Speeed);
+  motor3.run(FORWARD);
+  motor4.setSpeed(Speeed);
+  motor4.run(FORWARD);
 }
   
 void right()
 {
-  motor1.setSpeed(Speeed); //Define maximum velocity
-  motor1.run(FORWARD); //rotate the motor clockwise
-  motor2.setSpeed(Speeed); //Define maximum velocity
-  motor2.run(FORWARD); //rotate the motor clockwise
-  motor3.setSpeed(Speeed); //Define maximum velocity
-  motor3.run(BACKWARD); //rotate the motor anti-clockwise
-  motor4.setSpeed(Speeed); //Define maximum velocity
-  motor4.run(BACKWARD); //rotate the motor anti-clockwise
+  motor1.setSpeed(Speeed);
+  motor1.run(FORWARD);
+  motor2.setSpeed(Speeed);
+  motor2.run(FORWARD);
+  motor3.setSpeed(Speeed);
+  motor3.run(BACKWARD);
+  motor4.setSpeed(Speeed);
+  motor4.run(BACKWARD);
 }
   
 void topleft(){
-  motor1.setSpeed(Speeed); //Define maximum velocity
-  motor1.run(FORWARD); //rotate the motor clockwise
-  motor2.setSpeed(Speeed); //Define maximum velocity
+  motor1.setSpeed(Speeed);
+  motor1.run(FORWARD);
+  motor2.setSpeed(Speeed);
   motor2.run(FORWARD); //rotate the motor clockwise
   motor3.setSpeed(Speeed/3.1);//Define maximum velocity
   motor3.run(FORWARD); //rotate the motor clockwise
@@ -258,51 +258,51 @@ void topleft(){
   
 void topright()
 {
-  motor1.setSpeed(Speeed/3.1); //Define maximum velocity
-  motor1.run(FORWARD); //rotate the motor clockwise
-  motor2.setSpeed(Speeed/3.1); //Define maximum velocity
-  motor2.run(FORWARD); //rotate the motor clockwise
-  motor3.setSpeed(Speeed);//Define maximum velocity
-  motor3.run(FORWARD); //rotate the motor clockwise
-  motor4.setSpeed(Speeed);//Define maximum velocity
-  motor4.run(FORWARD); //rotate the motor clockwise
+  motor1.setSpeed(Speeed/3.1);
+  motor1.run(FORWARD);
+  motor2.setSpeed(Speeed/3.1);
+  motor2.run(FORWARD);
+  motor3.setSpeed(Speeed);
+  motor3.run(FORWARD);
+  motor4.setSpeed(Speeed);
+  motor4.run(FORWARD);
 }
   
 void bottomleft()
 {
-  motor1.setSpeed(Speeed); //Define maximum velocity
-  motor1.run(BACKWARD); //rotate the motor anti-clockwise
-  motor2.setSpeed(Speeed); //Define maximum velocity
-  motor2.run(BACKWARD); //rotate the motor anti-clockwise
-  motor3.setSpeed(Speeed/3.1); //Define maximum velocity
-  motor3.run(BACKWARD); //rotate the motor anti-clockwise
-  motor4.setSpeed(Speeed/3.1); //Define maximum velocity
-  motor4.run(BACKWARD); //rotate the motor anti-clockwise
+  motor1.setSpeed(Speeed);
+  motor1.run(BACKWARD);
+  motor2.setSpeed(Speeed);
+  motor2.run(BACKWARD);
+  motor3.setSpeed(Speeed/3.1);
+  motor3.run(BACKWARD);
+  motor4.setSpeed(Speeed/3.1);
+  motor4.run(BACKWARD);
 }
   
 void bottomright()
 {
-  motor1.setSpeed(Speeed/3.1); //Define maximum velocity
-  motor1.run(BACKWARD); //rotate the motor anti-clockwise
-  motor2.setSpeed(Speeed/3.1); //Define maximum velocity
-  motor2.run(BACKWARD); //rotate the motor anti-clockwise
-  motor3.setSpeed(Speeed); //Define maximum velocity
-  motor3.run(BACKWARD); //rotate the motor anti-clockwise
-  motor4.setSpeed(Speeed); //Define maximum velocity
-  motor4.run(BACKWARD); //rotate the motor anti-clockwise
+  motor1.setSpeed(Speeed/3.1);
+  motor1.run(BACKWARD);
+  motor2.setSpeed(Speeed/3.1);
+  motor2.run(BACKWARD);
+  motor3.setSpeed(Speeed);
+  motor3.run(BACKWARD);
+  motor4.setSpeed(Speeed);
+  motor4.run(BACKWARD);
 }
   
   
 void Stop()
 {
-  motor1.setSpeed(0); //Define minimum velocity
-  motor1.run(RELEASE); //stop the motor when release the button
-  motor2.setSpeed(0); //Define minimum velocity
-  motor2.run(RELEASE); //rotate the motor clockwise
-  motor3.setSpeed(0); //Define minimum velocity
-  motor3.run(RELEASE); //stop the motor when release the button
-  motor4.setSpeed(0); //Define minimum velocity
-  motor4.run(RELEASE); //stop the motor when release the button
+  motor1.setSpeed(0);
+  motor1.run(RELEASE);
+  motor2.setSpeed(0);
+  motor2.run(RELEASE);
+  motor3.setSpeed(0);
+  motor3.run(RELEASE);
+  motor4.setSpeed(0); 
+  motor4.run(RELEASE);
 }
 
 
