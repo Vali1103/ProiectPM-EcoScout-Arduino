@@ -1,3 +1,6 @@
 To save the data we receive back from TOY_CAR we need a software for the controller. I will use the following application
 
 https://coolterm.en.lo4d.com/windows
+
+
+After installation, we configure it for current needs, then capture and save the information received through the respective port.
