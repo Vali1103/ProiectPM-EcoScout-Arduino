@@ -138,9 +138,11 @@ void loop() {
         int cv = btSerial.read();
         Serial.println(cv);
 
-        int ppm = btSerial.read();
-        Serial.print(F("PPM: "));
-        Serial.println(ppm);
+        int sensorValueHigh = btSerial.read();
+        int sensorValueLow = btSerial.read();
+        int sensorValue = (sensorValueHigh << 8) | sensorValueLow;
+        Serial.print("PPM: ");
+        Serial.println(sensorValue);
     }
   }
   delay(100);

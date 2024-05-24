@@ -15,7 +15,7 @@ int Speeed = 255;
 
 // timer
 unsigned long startTime;
-const unsigned long interval = 5000; // 5 seconds
+const unsigned long interval = 2000; // 5 seconds
 
 #define obstacle 13
 #define Buzzer A5
@@ -94,7 +94,8 @@ void loop()
 
     btSerial.write(f);
 
-    btSerial.write(sensorValue);
+    btSerial.write((sensorValue >> 8) & 0xFF); // octet superior
+    btSerial.write(sensorValue & 0xFF); // octet inferior
 
   }
 
